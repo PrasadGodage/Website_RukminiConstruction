@@ -149,7 +149,8 @@
                         <h2 class="contact-title">Get in Touch</h2>
                     </div>
                     <div class="col-lg-8">
-                        <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                        <!-- <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate"> -->
+                            <form id="contact-form" role="form" method="post">
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
@@ -327,7 +328,25 @@
 		<!-- Jquery Plugins, main Jquery -->	
         <script src="./assets/js/plugins.js"></script>
         <script src="./assets/js/main.js"></script>
-        
+        <script>
+            $('#contact-form').on('submit', function(e) {
+                e.preventDefault();  
+                var fData = new FormData(this);
+                alert(fData);
+                $.ajax({
+                    url: 'email.php',
+                    type: 'POST',
+                    data: fData,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    dataType: 'json',
+                    success: function(response) {
+                       alert("Your Response has recorded successfull.")
+                    }
+                });
+            });
+        </script>
     </body>
     
     </html>
