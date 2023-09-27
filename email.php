@@ -21,7 +21,7 @@
         
         # Mail Content
         $content = "Name: $name\n";
-        $content .= "Email: $email\n\n";
+        $content .= "Email: $email\n";
         $content .= "Subject: $subject\n";
         $content .= "Message: $message\n";
         $subject = " Rukmini Construction";
