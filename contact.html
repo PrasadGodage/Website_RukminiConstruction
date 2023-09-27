@@ -344,16 +344,13 @@
                     contentType: false,
                     processData: false,
                     dataType: 'json',
-                    error: function (error) {
-                     alert('error; ' + eval(error));
-
-                    success: function(response) {
-                     alert(response);
-                       alert("Your Response has recorded successfull.");
-                       $('#message').val(" ");
-                       document.getElementById("contact-form").reset();
-                    }
-                    }
+                    success: function (html) {
+                   alert('successful : ' + html);
+                   $("#result").html("Successful");
+                                     },
+                   error: function (error) {
+                    alert('error; ' + eval(error));
+                 }
                 });
             });
         </script>
