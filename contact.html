@@ -345,6 +345,8 @@
                     processData: false,
                     success: function (response) {
                   console.log(response);
+                  $("#contact-form")[0].reset();
+                 alert("response as recorde");
                                      },
                      error: function (request, status, error) {
         console.log(request.responseText);
