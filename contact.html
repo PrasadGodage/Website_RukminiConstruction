@@ -347,9 +347,10 @@
                     success: function (html) {
                    alert('successful : ' + html);
                                      },
-                   error: function (error) {
-                    alert('error; ' + eval(error));
-                 }
+                     error: function (request, status, error) {
+        alert(request.responseText);
+        console.log(status);
+    }
                 });
             });
         </script>
