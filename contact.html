@@ -343,8 +343,11 @@
                     processData: false,
                     dataType: 'json',
                     success: function(response) {
-                        $("#contact-form")[0].reset()
-                       alert("Your Response has recorded successfull.")
+                     alert(response);
+                       alert("Your Response has recorded successfull.");
+                       $('#message').val(" ");
+                       document.getElementById("contact-form").reset();
+                      
                     }
                 });
             });
