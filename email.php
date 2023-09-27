@@ -3,7 +3,7 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         # FIX: Replace this email with recipient email
-        $mail_to = "info@rukminiconstruction.com";
+        $mail_to = "soulsoft.amol@gmail.com";
         
         # Sender Data
         // $subject = trim($_POST["subject"]);
@@ -22,7 +22,7 @@
         # Mail Content
         $content = "Name: $name\n";
         $content .= "Email: $email\n\n";
-        $subject .= "subject: $subject\n";
+        $content .= "Subject: $subject\n";
         $content .= "Message: $message\n";
         $subject = " Rukmini Construction";
         # email headers.
