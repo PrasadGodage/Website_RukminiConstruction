@@ -344,11 +344,11 @@
                     contentType: false,
                     processData: false,
                     dataType: 'json',
-                    success: function (html) {
-                   alert('successful : ' + html);
+                    success: function (response) {
+                  console.log(response);
                                      },
                      error: function (request, status, error) {
-        alert(request.responseText);
+        console(request.responseText);
         console.log(status);
     }
                 });
