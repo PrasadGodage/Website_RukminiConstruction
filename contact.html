@@ -331,11 +331,11 @@
         <script src="./assets/js/main.js"></script>
         <script>
             $('#contact-form').on('submit', function(e) {
-                console.log("Successfully");
+                console.log("Test");
                 e.preventDefault();  
                 var fData = new FormData(this);
                 alert(fData);
-                console.log("Successfully");
+                console.log("in Form data");
                 $.ajax({
                     url: 'email.php',
                     type: 'POST',
