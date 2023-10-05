@@ -126,29 +126,29 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <h3 class="mb-4">Contact form</h3>
                     <p class="mb-4">If you have any questions or would like to discuss your upcoming construction project, please don't hesitate to contact us. Our dedicated team is ready to assist you every step of the way..</p>
-                    <form>
+                     <form id="contact-form" role="form" method="post">
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                    <input type="text" class="form-control" id="name" placeholder="Your Name" required>
                                     <label for="name">Your Name</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                    <input type="email" class="form-control" id="email" placeholder="Your Email" required>
                                     <label for="email">Your Email</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                    <input type="text" class="form-control" id="subject" placeholder="Subject" required>
                                     <label for="subject">Subject</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 120px"></textarea>
+                                    <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 120px" required></textarea>
                                     <label for="message">Message</label>
                                 </div>
                             </div>
@@ -248,6 +248,32 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script>
+        $('#contact-form').on('submit', function(e) {
+            console.log("Test");
+            e.preventDefault();  
+            var fData = new FormData(this);
+            alert(fData);
+            console.log("in Form data");
+            $.ajax({
+                url: 'email.php',
+                type: 'POST',
+                data: fData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+              console.log(response);
+              $("#contact-form")[0].reset();
+             alert("response as recorde");
+                                 },
+                 error: function (request, status, error) {
+    console.log(request.responseText);
+    console.log(status);
+}
+            });
+        });
+    </script>
 </body>
 
 </html>
